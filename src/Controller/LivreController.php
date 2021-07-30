@@ -27,4 +27,12 @@ class LivreController extends AbstractController
             'listeLivres'=>$listeLivres,
         ]);
     }
+    /**
+     * @Route("/livre/create", name="creerlivre")
+     */
+    public function creerLivre(LivreService $livreService,LivreType $form): Response
+    {
+    $form = $this->createForm(LivreType::class);
+    return $this->render('livre/create.html.twig',['formulaire'=>$form->createView()]);
+    }
 }

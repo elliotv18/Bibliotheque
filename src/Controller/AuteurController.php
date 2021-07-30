@@ -32,7 +32,7 @@ class AuteurController extends AbstractController
     /**
      * @Route("/auteur/create", name="creerauteur")
      */
-    public function creerLivre(AuteurService $auteurService,AuteurType $form): Response
+    public function creerAuteur(AuteurService $auteurService,AuteurType $form): Response
     {
     $form = $this->createForm(AuteurType::class);
     return $this->render('auteur/create.html.twig',['formulaire'=>$form->createView()]);

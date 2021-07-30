@@ -6,6 +6,7 @@ use App\Entity\Auteur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class AuteurType extends AbstractType
 {
@@ -16,6 +17,7 @@ class AuteurType extends AbstractType
             ->add('prenom')
             ->add('biographie')
             ->add('livres')
+            ->add('save', SubmitType::class, ['label' => 'ajouter auteur'])
         ;
     }
 
